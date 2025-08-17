@@ -1,0 +1,22 @@
+[
+  {
+    "items": [
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "12.99",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 1
+      }
+    ],
+    "customer": {
+      "name": "Muhammad ahmed",
+      "email": "ahmad.ghulam.ghous09@gmail.com",
+      "street": "VPO Dadwali Shareef Tehsil Wazirabad District Gujranwala",
+      "postal-code": "52000",
+      "city": "WAZIRABAD"
+    },
+    "id": "453.616822450301"
+  }
+]

@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#29251c, #2c2306);
+  color: #d9e2f1;
+
+  min-height: 100vh;
+}
+
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 10%;
+  border-bottom: 3px solid #ff9800;
+  box-shadow: 0 4px 12px -2px #ff9800;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 4px 10px -2px #ff9800;
+  }
+  100% {
+    box-shadow: 0 4px 20px 0 #ff9800;
+  }
+}
+
+#main-header #title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#main-header #title img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #ffc404;
+}
+
+#main-header button {
+  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+}
+/* Target the menu list in the header */
+#Navul {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Arrange items horizontally */
+  gap: 5rem; /* Space between items */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+}
+
+/* Style individual list items */
+#Navli {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffc404; /* Text color */
+  cursor: pointer; /* Pointer on hover */
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Hover effect for nav items */
+#Navli:hover {
+  color: #ff9800;
+  transition: color 0.3s ease;
+}
+
+/* Active link styling */
+.isActive {
+  color: #ff9800;
+  position: relative;
+  font-weight: bold;
+}
+
+/* Add a glowing underline for active links */
+.isActive::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* space between text and underline */
+  width: 100%;
+  height: 3px;
+  background-color: #ff9800;
+  box-shadow: 0 0 8px #ff9800;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+/* Target only NavLink-generated anchors inside your nav list */
+#Navul a {
+  text-decoration: none;
+  color: white; /* your desired default color */
+}
+
+#Navul a:hover {
+  color: #ff9800; /* your hover color */
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
+  color: #ffc404;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+/* Mobile view */
+@media (max-width: 1000px) {
+  #Navul {
+    display: none; /* Show hamburger icon */
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  #main-header #title img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid #ffc404;
+  }
+}
+
+#meals {
+  width: 90%;
+  max-width: 70rem;
+  list-style: none;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.meal-item {
+  background-color: #1d1a16;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.meal-item article {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.meal-item img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.meal-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.75rem 0;
+}
+
+.meal-item-description {
+  margin: 1rem;
+}
+
+.meal-item-price {
+  display: inline-block;
+  background-color: #312c1d;
+  color: #ffc404;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.meal-item-actions {
+  margin-bottom: 1.5rem;
+}
+
+.cart h2 {
+  margin: 1rem 0;
+}
+
+.cart ul {
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-actions .text-button {
+  color: #1d1a16;
+}
+
+.modal-actions .text-button:hover,
+.modal-actions .text-button:active {
+  color: #312c1d;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #46443c;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.cart-item p {
+  margin: 0;
+}
+
+.cart-item-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cart-item-actions button {
+  cursor: pointer;
+  font-size: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #312c1d;
+  color: #ffc404;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item-actions button:hover,
+.cart-item-actions button:active {
+  background-color: #1d1a16;
+  color: #ffab04;
+}
+
+.control {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  width: 100%;
+  max-width: 20rem;
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.control-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #ffc404;
+  border: 1px solid #ffc404;
+  color: #1f1a09;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+.button:hover,
+.button:active {
+  background-color: #ffab04;
+  border-color: #ffab04;
+  color: #1f1a09;
+}
+
+.text-button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #ffc404;
+}
+
+.text-button:hover,
+.text-button:active {
+  color: #ffab04;
+}
+
+.modal {
+  background-color: #e4ddd4;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  width: 80%;
+  max-width: 40rem;
+  animation: fade-slide-up 0.3s ease-out forwards;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.center {
+  text-align: center;
+}
+
+.error {
+  width: 90%;
+  max-width: 25rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #f9b8b8;
+  color: #6d0b0b;
+  border-radius: 6px;
+}
+
+.error h2 {
+  margin: 0;
+}
+
+.error p {
+  margin: 0;
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hamburgerD {
+  display: none;
+}
+
+/* Mobile menu overlay when open */
+.toggleH {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#29251c, #2c2306); /* dark background */
+  display: flex;
+  flex-direction: column;
+  z-index: 998;
+}
+
+/* Header area with close button */
+.hamburgerH {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+/* Main menu container */
+.hamburgerM {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* NavLinks inside open hamburger menu */
+.toggleH #Navul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  /* Start hidden, then animate */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Each link item */
+.toggleH #Navli {
+  font-size: 1.5rem;
+  color: #ffc404;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+/* Stagger animations for each link */
+.toggleH #Navli:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.toggleH #Navli:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.toggleH #Navli:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Slide-down animation for menu container */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in upward animation for links */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1000px) {
+  .hamburgerD {
+    display: block;
+  }
+}

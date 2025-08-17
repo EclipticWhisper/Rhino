@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.main-container {
+  position: relative;
+  width: 700px;
+  height: 300px;
+  margin: auto;
+  padding-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 4px 10px -2px #ff9800;
+  }
+  100% {
+    box-shadow: 0 4px 20px 0 #ff9800;
+  }
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.thefront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #ff9800;
+  box-shadow: 0 4px 12px -2px #ff9800;
+  animation: glow 1.5s infinite alternate;
+}
+
+.theback {
+  height: 100%;
+  padding: 10px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  border-radius: 20px;
+  border: 3px solid #ff9800;
+  box-shadow: 0 4px 12px -2px #ff9800;
+  animation: glow 1.5s infinite alternate;
+}
+
+.theback p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.ruler {
+  border: none;
+  height: 2px;
+  background-color: #ff9800;
+  margin-top: 15rem;
+  width: 70%;
+}
+
+/* -------------------
+   RESPONSIVENESS
+-------------------- */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .main-container {
+    width: 90%;
+    height: 250px;
+    padding-top: 5rem;
+  }
+
+  .theback p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  .ruler {
+    margin-top: 12rem;
+    width: 80%;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .main-container {
+    width: 95%;
+    height: 220px;
+    padding-top: 2rem;
+  }
+
+  .thefront h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .theback p {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    padding: 0 8px;
+  }
+
+  .ruler {
+    margin-top: 10rem;
+    width: 90%;
+  }
+}
