@@ -1,0 +1,108 @@
+.footer {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 5rem;
+  border-top: 3px solid #ff9800;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+/* Each section inside footer */
+.footer > div {
+  flex: 1;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Add vertical line separators */
+.footer > div:not(:last-child) {
+  border-right: 2px solid #ff9800;
+}
+
+/* Footer image */
+.footer-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-img img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Footer links */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  text-align: start;
+}
+
+.footer-links li {
+  margin: 0.5rem 0;
+}
+
+/* Contact section */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* General text */
+p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #ff9800; /* orange to match glow */
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+  color: #fff; /* glow on hover */
+  transform: scale(1.05); /* slight zoom */
+}
+
+/* Social icons */
+.icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons a {
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright p{
+    font-size: 1rem;
+    
+}
