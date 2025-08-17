@@ -9,6 +9,8 @@ import Root from "./Root.jsx";
 import PageError from "./components/Error/PageError.jsx";
 import Meals from "./components/Meals.jsx";
 import About from "./components/About/About.jsx";
+import RestaurantJob from "./components/Restaurant-jobs/RestaurantJobs.jsx";
+import OurStory from "./components/OurStory/OurStory.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const routes = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "/restaurant-jobs",
+        element: <RestaurantJob />,
+      },
+      {
+        path: "/our-story",
+        element: <OurStory />,
       },
     ],
   },
