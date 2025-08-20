@@ -1,4 +1,4 @@
-import Pandemic from "../../assets/Pandemic.png";
+
 import "../css/About.css";
 export default function About() {
   return (
