@@ -1,0 +1,53 @@
+.story {
+  /* max-width: 900px; */
+  /* margin: 4rem auto; center content with spacing */
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  line-height: 1.8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.story-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.story-heading h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff9800;
+  border-bottom: 3px solid #ff9800; /* highlight underline */
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.story-paragraph p {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: justify; /* neat paragraph layout */
+  margin-left: 0.3rem;
+}
+
+.story-paragraph p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .story {
+    padding: 1.5rem;
+  }
+
+  .story-heading h1 {
+    font-size: 1.5rem;
+  }
+
+  .story-paragraph p {
+    font-size: 1.2rem;
+  }
+}
