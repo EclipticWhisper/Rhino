@@ -1,5 +1,4 @@
 import "../../components/css/story.css";
-import Footer from "../Footer/Footer";
 export default function OurStory() {
   return (
     <>
@@ -35,7 +34,6 @@ export default function OurStory() {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -21,12 +21,6 @@
   margin-top: 5rem;
 }
 
-/* .hero-buttons {
-  margin-top: 10rem;
-  display: flex;
-  gap: 0.75rem;
-  justify-content: end;
-} */
 
 .hero-right {
   display: flex;
@@ -68,7 +62,4 @@
   .hero-left {
     margin: 0;
   }
-  /* .hero-buttons{
-    margin-top: 9rem;
-  } */
 }

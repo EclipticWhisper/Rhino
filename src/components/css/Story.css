@@ -1,6 +1,4 @@
 .story {
-  /* max-width: 900px; */
-  /* margin: 4rem auto; center content with spacing */
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
@@ -30,7 +28,9 @@
   font-size: 1.2rem;
   color: #fff;
   text-align: justify; /* neat paragraph layout */
-  margin-left: 0.3rem;
+  /* margin-left: 0.3rem; */
+  margin-right:4rem;
+  font-weight: 350;
 }
 
 .story-paragraph p:last-child {

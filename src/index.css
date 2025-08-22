@@ -22,6 +22,10 @@ body {
   border-bottom: 3px solid #ff9800;
   box-shadow: 0 4px 12px -2px #ff9800;
   animation: glow 1.5s infinite alternate;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Keeps it on top of other elements */
+  background: #1f1a09; /* Ensure it has a solid background */
 }
 
 @keyframes glow {
@@ -171,6 +175,7 @@ h1 {
 
 .meal-item-description {
   margin: 1rem;
+  font-weight: 100;
 }
 
 .meal-item-price {
@@ -206,6 +211,7 @@ h1 {
 
 .modal-actions .text-button {
   color: #1d1a16;
+  font-weight: 100;
 }
 
 .modal-actions .text-button:hover,
@@ -231,6 +237,8 @@ h1 {
 
 .cart-item p {
   margin: 0;
+  color: #000;
+  font-weight: 100;
 }
 
 .cart-item-actions {
@@ -268,6 +276,8 @@ h1 {
 .control label {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #000;
+  font-weight: 100;
 }
 
 .control input {
@@ -287,6 +297,7 @@ h1 {
 
 .button {
   font: inherit;
+  font-weight: 100;
   cursor: pointer;
   background-color: #ffc404;
   border: 1px solid #ffc404;
