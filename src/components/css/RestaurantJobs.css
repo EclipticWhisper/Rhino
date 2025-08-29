@@ -1,0 +1,87 @@
+.restaurant-job {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+}
+
+.restaurant-job form {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  /* gap: 5rem; */
+}
+
+.first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.restaurant-job label {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #ff9800;
+}
+
+.first-row input {
+  height: 35px;
+  width: 350px;
+  border-radius: 5px;
+  background-color: #e4ddd4;
+}
+
+input:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 8px 2px rgba(255, 152, 0, 0.6);
+  outline: none;
+}
+
+.second-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 2rem;
+}
+
+.restaurant-job select {
+  height: 35px;
+  width: 530px;
+  border-radius: 5px;
+  background-color: #e4ddd4;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 8px 2px rgba(255, 152, 0, 0.6);
+  outline: none;
+}
+
+option {
+  font-size: 1rem;
+}
+option:checked {
+  font-size: 1rem;
+  background-color: #ff9800;
+  color: white;
+}
+
+.cover-letter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cover-input {
+  height: 200px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #e4ddd4;
+  margin-bottom: 2rem;
+}
