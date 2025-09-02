@@ -3,14 +3,23 @@
   justify-content: center;
   align-items: center;
   margin: 5rem;
+  flex-direction: column;
 }
 
 .restaurant-job form {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
-  /* gap: 5rem; */
+}
+
+.restaurant-job h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #ff9800;
+  letter-spacing: 0.2rem;
+  /* text-transform: uppercase; */
 }
 
 .first-row {
@@ -19,6 +28,7 @@
   align-items: center;
   gap: 3rem;
   margin-bottom: 2rem;
+  /* flex-wrap: wrap; */
 }
 
 .restaurant-job label {
@@ -35,18 +45,13 @@
   background-color: #e4ddd4;
 }
 
-input:focus {
-  border-color: #ff9800;
-  box-shadow: 0 0 8px 2px rgba(255, 152, 0, 0.6);
-  outline: none;
-}
-
 .second-row {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .restaurant-job select {
@@ -57,19 +62,24 @@ input:focus {
   cursor: pointer;
 }
 
-select:focus {
+input:focus,
+select:focus,
+textarea:focus {
   border-color: #ff9800;
-  box-shadow: 0 0 8px 2px rgba(255, 152, 0, 0.6);
+  box-shadow: 0 0 8px 2px rgba(255, 152, 0, 0.3);
   outline: none;
 }
 
 option {
   font-size: 1rem;
+  font-style: italic;
 }
+
 option:checked {
   font-size: 1rem;
   background-color: #ff9800;
   color: white;
+  /* font-style: italic; */
 }
 
 .cover-letter {
@@ -84,4 +94,31 @@ option:checked {
   border-radius: 5px;
   background-color: #e4ddd4;
   margin-bottom: 2rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+select option:disabled {
+  color: #888;
+  font-style: italic;
+}
+
+.upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #e4ddd4;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.upload img {
+  height: 250px;
+  object-fit: contain;
 }
