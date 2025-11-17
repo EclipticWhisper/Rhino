@@ -1,4 +1,8 @@
+/* -------------------------------------------------
+   1. GLOBAL STYLES & RESETS
+------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -10,10 +14,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(#29251c, #2c2306);
   color: #d9e2f1;
-
   min-height: 100vh;
 }
 
+/* -------------------------------------------------
+   2. HEADER
+------------------------------------------------- */
 #main-header {
   display: flex;
   justify-content: space-between;
@@ -24,17 +30,8 @@ body {
   animation: glow 1.5s infinite alternate;
   position: sticky;
   top: 0;
-  z-index: 1000; /* Keeps it on top of other elements */
-  background: #1f1a09; /* Ensure it has a solid background */
-}
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 4px 10px -2px #ff9800;
-  }
-  100% {
-    box-shadow: 0 4px 20px 0 #ff9800;
-  }
+  z-index: 1000;
+  background: #1f1a09;
 }
 
 #main-header #title {
@@ -46,8 +43,8 @@ body {
 #main-header #title img {
   width: 4rem;
   height: 4rem;
-  object-fit: contain;
   border-radius: 50%;
+  object-fit: contain;
   border: 2px solid #ffc404;
 }
 
@@ -55,86 +52,61 @@ body {
   font-size: 1.5rem;
   font-family: "Lato", sans-serif;
 }
-/* Target the menu list in the header */
+
+/* -------------------------------------------------
+   3. NAVIGATION (Desktop)
+------------------------------------------------- */
 #Navul {
-  list-style: none; /* Remove bullet points */
-  display: flex; /* Arrange items horizontally */
-  gap: 5rem; /* Space between items */
-  margin: 0; /* Remove default margins */
-  padding: 0; /* Remove default padding */
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+  margin: 0;
+  padding: 0;
 }
 
-/* Style individual list items */
+#Navul a {
+  text-decoration: none;
+  color: white;
+}
+
+#Navul a:hover {
+  color: #ff9800;
+}
+
 #Navli {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #ffc404; /* Text color */
-  cursor: pointer; /* Pointer on hover */
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-/* Hover effect for nav items */
-#Navli:hover {
-  color: #ff9800;
+  color: #ffc404;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
-/* Active link styling */
+#Navli:hover {
+  color: #ff9800;
+}
+
+/* Active Link */
 .isActive {
   color: #ff9800;
   position: relative;
   font-weight: bold;
 }
 
-/* Add a glowing underline for active links */
 .isActive::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px; /* space between text and underline */
+  bottom: -4px;
   width: 100%;
   height: 3px;
   background-color: #ff9800;
   box-shadow: 0 0 8px #ff9800;
   border-radius: 2px;
-  transition: all 0.3s ease;
-}
-/* Target only NavLink-generated anchors inside your nav list */
-#Navul a {
-  text-decoration: none;
-  color: white; /* your desired default color */
 }
 
-#Navul a:hover {
-  color: #ff9800; /* your hover color */
-}
-
-h1 {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  margin: 0;
-  color: #ffc404;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-}
-/* Mobile view */
-@media (max-width: 1000px) {
-  #Navul {
-    display: none; /* Show hamburger icon */
-  }
-  h1 {
-    font-size: 1.2rem;
-  }
-  #main-header #title img {
-    width: 2rem;
-    height: 2rem;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 2px solid #ffc404;
-  }
-}
-
+/* -------------------------------------------------
+   4. MEALS GRID
+------------------------------------------------- */
 #meals {
   width: 90%;
   max-width: 70rem;
@@ -149,15 +121,15 @@ h1 {
 .meal-item {
   background-color: #1d1a16;
   border-radius: 1rem;
-  overflow: hidden;
   text-align: center;
+  overflow: hidden;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .meal-item article {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: space-between;
 }
 
@@ -185,14 +157,12 @@ h1 {
   font-size: 0.9rem;
   font-weight: bold;
   padding: 0.5rem 2rem;
-  margin: 0;
   border-radius: 4px;
 }
 
-.meal-item-actions {
-  margin-bottom: 1.5rem;
-}
-
+/* -------------------------------------------------
+   5. CART STYLES
+------------------------------------------------- */
 .cart h2 {
   margin: 1rem 0;
 }
@@ -201,31 +171,6 @@ h1 {
   list-style: none;
   margin: 0.5rem 0;
   padding: 0;
-}
-
-.modal-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-.modal-actions .text-button {
-  color: #1d1a16;
-  font-weight: 100;
-}
-
-.modal-actions .text-button:hover,
-.modal-actions .text-button:active {
-  color: #312c1d;
-}
-
-.cart-total {
-  display: flex;
-  justify-content: flex-end;
-  margin: 2rem 0;
-  font-size: 1.15rem;
-  font-weight: bold;
-  color: #46443c;
 }
 
 .cart-item {
@@ -244,7 +189,6 @@ h1 {
 .cart-item-actions {
   display: flex;
   gap: 1rem;
-  align-items: center;
 }
 
 .cart-item-actions button {
@@ -256,17 +200,25 @@ h1 {
   border: none;
   background-color: #312c1d;
   color: #ffc404;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.cart-item-actions button:hover,
-.cart-item-actions button:active {
+.cart-item-actions button:hover {
   background-color: #1d1a16;
   color: #ffab04;
 }
 
+.cart-total {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #46443c;
+}
+
+/* -------------------------------------------------
+   6. FORMS & INPUTS
+------------------------------------------------- */
 .control {
   margin: 0.5rem 0;
   display: flex;
@@ -274,27 +226,28 @@ h1 {
 }
 
 .control label {
-  font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #000;
   font-weight: 100;
+  color: #000;
 }
 
 .control input {
   width: 100%;
   max-width: 20rem;
-  font: inherit;
   padding: 0.5rem;
   border-radius: 4px;
   border: 1px solid #ccc;
+  font: inherit;
 }
 
 .control-row {
   display: flex;
-  justify-content: flex-start;
   gap: 1rem;
 }
 
+/* -------------------------------------------------
+   7. BUTTONS
+------------------------------------------------- */
 .button {
   font: inherit;
   font-weight: 100;
@@ -306,34 +259,34 @@ h1 {
   border-radius: 4px;
 }
 
-.button:hover,
-.button:active {
+.button:hover {
   background-color: #ffab04;
   border-color: #ffab04;
-  color: #1f1a09;
 }
 
 .text-button {
   font: inherit;
   cursor: pointer;
-  background-color: transparent;
+  background: none;
   border: none;
   color: #ffc404;
 }
 
-.text-button:hover,
-.text-button:active {
+.text-button:hover {
   color: #ffab04;
 }
 
+/* -------------------------------------------------
+   8. MODALS
+------------------------------------------------- */
 .modal {
   background-color: #e4ddd4;
   border-radius: 6px;
-  border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   padding: 1rem;
+  border: none;
   width: 80%;
   max-width: 40rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   animation: fade-slide-up 0.3s ease-out forwards;
 }
 
@@ -341,10 +294,15 @@ h1 {
   background-color: rgba(0, 0, 0, 0.55);
 }
 
-.center {
-  text-align: center;
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
+/* -------------------------------------------------
+   9. ERROR BOX
+------------------------------------------------- */
 .error {
   width: 90%;
   max-width: 25rem;
@@ -355,74 +313,53 @@ h1 {
   border-radius: 6px;
 }
 
-.error h2 {
-  margin: 0;
-}
-
+.error h2,
 .error p {
   margin: 0;
 }
 
-@keyframes fade-slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(4rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* -------------------------------------------------
+   10. HAMBURGER MENU (Mobile)
+------------------------------------------------- */
 .hamburgerD {
   display: none;
 }
 
-/* Mobile menu overlay when open */
 .toggleH {
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#29251c, #2c2306); /* dark background */
+  background: linear-gradient(#29251c, #2c2306);
   display: flex;
   flex-direction: column;
   z-index: 998;
 }
 
-/* Header area with close button */
 .hamburgerH {
   display: flex;
   justify-content: flex-end;
   padding: 1rem;
 }
 
-/* Main menu container */
 .hamburgerM {
   flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* NavLinks inside open hamburger menu */
 .toggleH #Navul {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  /* Start hidden, then animate */
   opacity: 0;
   transform: translateY(-20px);
   animation: slideDown 0.3s ease-out forwards;
 }
 
-/* Each link item */
 .toggleH #Navli {
   font-size: 1.5rem;
   color: #ffc404;
@@ -431,42 +368,52 @@ h1 {
   animation: fadeInUp 0.3s ease-out forwards;
 }
 
-/* Stagger animations for each link */
-.toggleH #Navli:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.toggleH #Navli:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.toggleH #Navli:nth-child(3) {
-  animation-delay: 0.3s;
+/* Stagger */
+.toggleH #Navli:nth-child(1) { animation-delay: 0.1s; }
+.toggleH #Navli:nth-child(2) { animation-delay: 0.2s; }
+.toggleH #Navli:nth-child(3) { animation-delay: 0.3s; }
+
+/* -------------------------------------------------
+   11. ANIMATIONS
+------------------------------------------------- */
+@keyframes glow {
+  0% { box-shadow: 0 4px 10px -2px #ff9800; }
+  100% { box-shadow: 0 4px 20px 0 #ff9800; }
 }
 
-/* Slide-down animation for menu container */
+@keyframes fade-slide-up {
+  from { opacity: 0; transform: translateY(4rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Fade-in upward animation for links */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+/* -------------------------------------------------
+   12. MEDIA QUERIES
+------------------------------------------------- */
 @media (max-width: 1000px) {
+  #Navul {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
   .hamburgerD {
     display: block;
+  }
+
+  #main-header #title img {
+    width: 2rem;
+    height: 2rem;
   }
 }

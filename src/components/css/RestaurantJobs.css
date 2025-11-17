@@ -1,17 +1,15 @@
+/* ===== MAIN WRAPPER ===== */
 .restaurant-job {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5rem;
+  margin: 5rem auto;
   flex-direction: column;
+  width: 100%;
+  max-width: 900px;
 }
 
-.restaurant-job form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
+/* ===== HEADING ===== */
 .restaurant-job h2 {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -19,18 +17,18 @@
   margin-bottom: 2rem;
   color: #ff9800;
   letter-spacing: 0.2rem;
-  /* text-transform: uppercase; */
 }
 
+/* ===== FORM ===== */
 .first-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
-  margin-bottom: 2rem;
-  /* flex-wrap: wrap; */
+  margin-bottom: 2rem; /* flex-wrap: wrap; */
 }
 
+/* ===== LABELS ===== */
 .restaurant-job label {
   display: block;
   font-size: 1.3rem;
@@ -38,13 +36,7 @@
   color: #ff9800;
 }
 
-.first-row input {
-  height: 35px;
-  width: 350px;
-  border-radius: 5px;
-  background-color: #e4ddd4;
-}
-
+/* ===== ROWS ===== */
 .second-row {
   display: flex;
   justify-content: center;
@@ -54,14 +46,37 @@
   flex-wrap: wrap;
 }
 
-.restaurant-job select {
-  height: 35px;
-  width: 530px;
+/* ===== INPUTS ===== */
+.first-row input,
+.second-row input,
+.restaurant-job select,
+.cover-input {
+  width: 100%;
+  height: 40px;
   border-radius: 5px;
   background-color: #e4ddd4;
+  padding: 0 10px;
+  border: 1px solid transparent;
+}
+
+/* ===== SELECT ===== */
+.restaurant-job select {
   cursor: pointer;
 }
 
+/* ===== TEXTAREA ===== */
+.cover-letter {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cover-input {
+  height: 200px;
+  padding: 10px;
+  resize: vertical;
+}
+
+/* ===== INPUT FOCUS ===== */
 input:focus,
 select:focus,
 textarea:focus {
@@ -70,32 +85,7 @@ textarea:focus {
   outline: none;
 }
 
-option {
-  font-size: 1rem;
-  font-style: italic;
-}
-
-option:checked {
-  font-size: 1rem;
-  background-color: #ff9800;
-  color: white;
-  /* font-style: italic; */
-}
-
-.cover-letter {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.cover-input {
-  height: 200px;
-  width: 100%;
-  border-radius: 5px;
-  background-color: #e4ddd4;
-  margin-bottom: 2rem;
-}
-
+/* ===== PLACEHOLDERS ===== */
 input::placeholder,
 textarea::placeholder {
   color: #999;
@@ -103,11 +93,23 @@ textarea::placeholder {
   font-size: 0.95rem;
 }
 
+/* ===== SELECT OPTIONS ===== */
+option {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+option:checked {
+  background-color: #ff9800;
+  color: white;
+}
+
 select option:disabled {
   color: #888;
   font-style: italic;
 }
 
+/* ===== UPLOAD AREA ===== */
 .upload {
   display: flex;
   justify-content: center;
@@ -116,9 +118,43 @@ select option:disabled {
   background-color: #e4ddd4;
   border-radius: 5px;
   margin-bottom: 2rem;
+  padding: 1rem;
+  width: 100%;
 }
 
 .upload img {
-  height: 250px;
+  width: 100%;
+  max-height: 250px;
   object-fit: contain;
+}
+
+/* ========================================================= */
+/*                    RESPONSIVE MOBILE                      */
+/* ========================================================= */
+@media (max-width: 768px) {
+  .restaurant-job {
+    margin: 2rem 1rem;
+    width: auto;
+  }
+
+  .first-row,
+  .second-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .restaurant-job h2 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100% !important;
+  }
+
+  .upload img {
+    max-height: 180px;
+  }
 }
