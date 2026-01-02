@@ -21,8 +21,7 @@ export default function Header() {
     <header id="main-header" role="banner">
       {/* Logo Section */}
       <div id="title">
-        <img src={logoImg} alt="Rhino Daizo Restaurant Logo" />
-        {/* <h1>Rhino_Daizo</h1> */}
+        <img src={logoImg} alt="Rhino_Daizo Restaurant Logo" loading="lazy" />
       </div>
 
       {/* Desktop Navigation */}
@@ -40,7 +39,7 @@ export default function Header() {
           title={`You have ${totalCartItems} item(s) in your cart`}
         >
           <span className="cart-icon">🛒</span>
-          <span className="cart-count">({totalCartItems})</span>
+          <span className="cart-count">{totalCartItems}</span>
         </Button>
       </div>
 

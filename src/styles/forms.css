@@ -47,9 +47,10 @@
   cursor: pointer;
   background: none;
   border: none;
-  color: #ffc404;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
 }
 
 .text-button:hover {
-  color: #ffab04;
+  color: #404040;
 }

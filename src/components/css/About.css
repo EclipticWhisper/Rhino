@@ -1,123 +1,150 @@
 @import "../../styles/globals.css";
 
-.main-container {
-  position: relative;
-  width: 700px;
-  height: 300px;
-  margin: auto;
-  padding-top: 10rem;
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.about-intro {
+  text-align: center;
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+}
+
+.about-intro h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  margin: 0;
+  color: var(--color-secondary);
+}
+
+.about-intro p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #e8e4dc;
+  letter-spacing: 0.02em;
+}
+
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.pillar-card {
+  perspective: 1200px;
   cursor: pointer;
 }
 
-@keyframes glow {
-  0% {
-    box-shadow: var(--shadow-primary);
-  }
-  100% {
-    box-shadow: var(--shadow-primary-hover);
-  }
-}
-
-.card {
-  position: absolute;
+.card-inner {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 320px;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-style: preserve-3d;
-  transition: all 0.5s ease;
 }
 
-.card:hover {
+.pillar-card:hover .card-inner {
   transform: rotateY(180deg);
 }
 
-.thefront {
+.card-front,
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 20px;
+  border-radius: 16px;
+  padding: 2rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border: 3px solid var(--color-primary);
-  box-shadow: 0 4px 12px -2px var(--color-primary);
-  animation: glow 1.5s infinite alternate;
-}
-
-.theback {
-  height: 100%;
-  padding: 10px;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  border-radius: 20px;
-  border: 3px solid var(--color-primary);
-  box-shadow: 0 4px 12px -2px var(--color-primary);
-  animation: glow 1.5s infinite alternate;
-}
-
-.theback p {
-  font-size: 1.2rem;
-  line-height: 1.5rem;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid rgba(255, 196, 4, 0.3);
+  background: linear-gradient(145deg, rgba(27, 22, 16, 0.95), rgba(20, 15, 10, 0.95));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
   text-align: center;
-  font-weight: 100;
-  letter-spacing: normal;
 }
 
-.ruler {
-  border: none;
-  height: 2px;
-  background-color: var(--color-primary);
-  margin-top: 15rem;
-  width: 70%;
+.card-front {
+  background: linear-gradient(135deg, rgba(255, 196, 4, 0.15), rgba(255, 171, 4, 0.08));
+  border-color: rgba(255, 196, 4, 0.5);
 }
 
-/* -------------------
-   RESPONSIVENESS
--------------------- */
+.card-front h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-secondary);
+  letter-spacing: 0.04em;
+}
 
-/* Tablet (≤768px) */
-@media (max-width: 768px) {
-  .main-container {
-    width: 90%;
-    height: 250px;
-    padding-top: 5rem;
+.card-back {
+  transform: rotateY(180deg);
+  gap: 1rem;
+}
+
+.card-back p {
+  margin: 0;
+  line-height: 1.7;
+  color: #ddd6c5;
+  font-size: 0.95rem;
+}
+
+.card-back p:last-child {
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .about {
+    padding: 3rem 1.2rem;
+    gap: 3rem;
   }
 
-  .theback p {
+  .about-pillars {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card-inner {
+    height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about {
+    padding: 2.5rem 1rem;
+    gap: 2rem;
+  }
+
+  .about-intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-intro p {
     font-size: 1rem;
-    line-height: 1.4rem;
   }
 
-  .ruler {
-    margin-top: 12rem;
-    width: 80%;
-  }
-}
-
-/* Mobile (≤480px) */
-@media (max-width: 480px) {
-  .main-container {
-    width: 95%;
-    height: 220px;
-    padding-top: 2rem;
+  .about-pillars {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
-  .thefront h1 {
-    font-size: 1.4rem;
-    text-align: center;
+  .card-inner {
+    height: 280px;
   }
 
-  .theback p {
+  .card-front h2 {
+    font-size: 1.6rem;
+  }
+
+  .card-back p {
     font-size: 0.9rem;
-    line-height: 1rem;
-    padding: 0 8px;
-  }
-
-  .ruler {
-    margin-top: 10rem;
-    width: 90%;
   }
 }

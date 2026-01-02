@@ -3,14 +3,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  border-bottom: var(--border-primary);
-  box-shadow: var(--shadow-primary);
-  animation: glow 1.5s infinite alternate;
+  padding: 0.8rem 5%;
+  border-bottom: 2px solid rgba(255, 196, 4, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--color-dark-bg);
+  background: linear-gradient(180deg, var(--color-dark-bg) 0%, rgba(20, 15, 10, 0.98) 100%);
   gap: 2rem;
   flex-wrap: wrap;
   min-height: 70px;
@@ -23,27 +22,19 @@
   min-width: fit-content;
 }
 
-#main-header #title h1 {
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: 700;
-  font-family: var(--font-heading);
-  color: var(--color-secondary);
-  letter-spacing: 0.05rem;
-  white-space: nowrap;
-}
-
 #main-header #title img {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
   object-fit: contain;
   border: 2px solid var(--color-secondary);
-  transition: transform 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 12px rgba(255, 196, 4, 0.1);
 }
 
 #main-header #title img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 196, 4, 0.25);
 }
 
 .nav-desktop {
@@ -60,83 +51,124 @@
 }
 
 .cart-button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.5rem !important;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  font-weight: 500;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.4rem !important;
+  border-radius: 10px;
+  background-color: var(--color-primary) !important;
+  border: 2px solid var(--color-primary) !important;
+  color: var(--color-dark-bg) !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-size: 0.95rem;
+  font-weight: 600;
   font-family: var(--font-heading);
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.cart-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  z-index: -1;
+}
+
+.cart-button:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .cart-button:hover {
   background-color: #ffab04 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
+  border-color: #ffab04 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(255, 196, 4, 0.4);
 }
 
 .cart-button:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
 }
 
 .cart-icon {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.cart-button:hover .cart-icon {
+  transform: scale(1.15);
 }
 
 .cart-count {
-  font-weight: 600;
-  color: var(--color-dark-bg);
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  min-width: 24px;
+  text-align: center;
 }
 
 /* Navigation links */
 #Navul {
   list-style: none;
   display: flex;
-  gap: 5rem;
+  gap: 3.5rem;
   margin: 0;
   padding: 0;
 }
 
 #Navul a {
   text-decoration: none;
-  color: white;
-}
-
-#Navul a:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 #Navli {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--color-secondary);
   cursor: pointer;
   transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+#Navli::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #Navli:hover {
   color: var(--color-primary);
 }
 
+#Navli:hover::after {
+  width: 100%;
+}
+
 .isActive {
   color: var(--color-primary);
-  position: relative;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .isActive::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
   width: 100%;
-  height: 3px;
-  background-color: var(--color-primary);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary));
   box-shadow: 0 0 8px var(--color-primary);
-  border-radius: 2px;
 }
 
 /* Hamburger menu */
@@ -167,20 +199,23 @@
   z-index: 998;
   overflow-y: auto;
   animation: slideDown 0.3s ease-out;
+  backdrop-filter: blur(2px);
 }
 
 .hamburgerH {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  border-bottom: 2px solid var(--color-primary);
+  padding: 1.2rem;
+  border-bottom: 2px solid rgba(255, 196, 4, 0.3);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .hamburgerH h2 {
   margin: 0;
   color: var(--color-secondary);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-family: var(--font-heading);
 }
 
 .hamburgerH button {
@@ -193,40 +228,42 @@
 .hamburgerM {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
 }
 
 .toggleH #Navul {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  align-items: center;
+  gap: 1.5rem;
+  align-items: stretch;
   opacity: 0;
   transform: translateY(-20px);
-  animation: slideDown 0.3s ease-out forwards;
+  animation: slideDown 0.4s ease-out forwards;
   width: 100%;
 }
 
 .toggleH #Navli {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--color-secondary);
   opacity: 0;
   transform: translateY(-10px);
-  animation: fadeInUp 0.3s ease-out forwards;
+  animation: fadeInUp 0.4s ease-out forwards;
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  width: 100%;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
   text-align: center;
+  border: 1px solid rgba(255, 196, 4, 0.2);
+  background: rgba(255, 196, 4, 0.05);
 }
 
 .toggleH #Navli:hover {
-  color: var(--color-primary);
-  background-color: rgba(255, 152, 0, 0.1);
-  transform: translateY(-5px) translateX(-10px);
+  color: var(--color-dark-bg);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateX(8px);
 }
 
 .toggleH #Navli:nth-child(1) { animation-delay: 0.1s; }
@@ -248,7 +285,28 @@
   }
 
   #main-header #title img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  #main-header {
+    padding: 0.7rem 4%;
+    gap: 1rem;
+  }
+
+  #main-header #title img {
     width: 2rem;
     height: 2rem;
+  }
+
+  .cart-button {
+    padding: 0.55rem 1rem !important;
+    font-size: 0.85rem;
+  }
+
+  .cart-icon {
+    font-size: 1rem;
   }
 }
