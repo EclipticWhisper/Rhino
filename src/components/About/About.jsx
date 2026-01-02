@@ -1,68 +1,56 @@
 import "../css/About.css";
+
+const pillars = [
+  {
+    id: "values",
+    title: "Our Values",
+    content: [
+      "During challenging times, we believe in bringing joy and positivity to our community.",
+      "Rhino_Daizo stands for more than great food—we champion happiness across all levels of society, especially those in need.",
+    ],
+  },
+  {
+    id: "service",
+    title: "Service",
+    content: [
+      "Our growth rests on customer satisfaction. We listen, care, and respond with urgency.",
+      "With 30+ outlets nationwide, every order gets the same meticulous attention to detail. Your happiness is our mission.",
+    ],
+  },
+  {
+    id: "quality",
+    title: "Quality",
+    content: [
+      "Premium ingredients and expert preparation form the foundation of everything we serve.",
+      "We maintain uncompromising food safety standards because trust is earned through consistency and care.",
+    ],
+  },
+];
+
 export default function About() {
   return (
-    <>
-      <div className="main-container">
-        <div className="card">
-          <div className="thefront">
-            <h1>Our Values</h1>
-          </div>
-          <div className="theback">
-            <p>
-              As we are aware of the fact that this Global Pandemic has taken us
-              hundreds of years back, and not just this; anxiety, stress and
-              sorrow have been widely spread as a result of it.
-            </p>
-            <p>
-              In these difficult times, Rhino_Daizo wants to promote happiness
-              to all. Rhino-Daizo doesn't only provide happiness to its
-              customers but society as a whole. Especially the underprivileged.
-            </p>
-          </div>
-        </div>
-      </div>
-      <hr className="ruler" />
-      <div className="main-container">
-        <div className="card">
-          <div className="thefront">
-            <h1>SERVICE</h1>
-          </div>
-          <div className="theback">
-            <p>
-              We realize that our continued growth and success is tied to the
-              happiness and satisfaction of our customers.
-            </p>
-            <p>
-              Despite having a massive nationwide network of branches, we pay
-              attention to every small detail that matters. Whenever our
-              customers need help, we strive to provide them with the best and
-              most timely service.
-            </p>
-          </div>
-        </div>
+    <section className="about" aria-label="About Rhino_Daizo">
+      <div className="about-intro">
+        <h1>Who We Are</h1>
+        <p>Built on passion, driven by flavor, guided by values.</p>
       </div>
 
-      <hr className="ruler" />
-      <div className="main-container">
-        <div className="card">
-          <div className="thefront">
-            <h1>QUALITY</h1>
+      <div className="about-pillars">
+        {pillars.map((pillar) => (
+          <div key={pillar.id} className="pillar-card" aria-label={pillar.title}>
+            <div className="card-inner">
+              <div className="card-front">
+                <h2>{pillar.title}</h2>
+              </div>
+              <div className="card-back">
+                {pillar.content.map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="theback">
-            <p>Our premium quality food is at the core of our success.</p>
-            <p>
-              Along with this, we make sure are exemplary food safety standards
-              meet the customer's expectations.
-            </p>
-            <p>
-              We believe this is an essential part of our service in order to
-              retain the trust of our customers.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
-
-      <hr className="ruler" />
-    </>
+    </section>
   );
 }

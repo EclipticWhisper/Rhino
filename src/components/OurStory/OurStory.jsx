@@ -1,39 +1,71 @@
-import "../../components/css/story.css";
+import "../css/Story.css";
+
+const milestones = [
+  {
+    year: "2014",
+    title: "One grill, one dream",
+    copy:
+      "We opened a single takeaway on Khayaban-e-Rahat in Karachi with a simple goal: serve smash burgers that taste like obsession.",
+  },
+  {
+    year: "2016",
+    title: "Smash pioneers",
+    copy:
+      "Introducing the American smash technique to our market put saucy, seared, and addictive burgers on every local must-try list.",
+  },
+  {
+    year: "2020",
+    title: "Flavor in flight",
+    copy:
+      "Relentless experimenting kept our menu fresh—new builds, bolder fries, and sauces that turned regulars into loyalists.",
+  },
+  {
+    year: "2024",
+    title: "Nationwide staple",
+    copy:
+      "32 outlets across 9 cities later, Rhino_Daizo is a household name and a reliable fix for burger cravings everywhere.",
+  },
+  {
+    year: "Next",
+    title: "Global ambition",
+    copy:
+      "We are gearing up to take the Rhino_Daizo experience global and become the next great international burger franchise.",
+  },
+];
+
 export default function OurStory() {
   return (
-    <>
-      <div className="story">
-        <div className="story-heading">
-          <h1>
-            Building a legacy takes it's time, effort, consistency and
-            dedication.
-          </h1>
-        </div>
-        <div className="story-paragraph">
-          <p>
-            With just a thought in mind to deliver with creativity and the taste
-            Burger lovers crave, we started with a simple take away outlet at
-            Khayaban-e-Rahat in Karachi.
-          </p>
-          <p>
-            From introducing the American burger smash technique into the
-            market, serving delicious mouth-watering burgers with saucy and
-            scrumptious fries, we’re doing it all!
-          </p>
-          <p>
-            Our key to success has solely been innovating and experimenting,
-            living up to our name "RHINO_DAIZO".
-          </p>
-          <p>
-            Growing to 32 outlets across 9 cities in Pakistan in just 10 years,
-            the brand has become a household name.
-          </p>
-          <p>
-            Not long from now, we wish to establish it in the near future as an
-            International Burger Franchise.
-          </p>
-        </div>
+    <section className="story" aria-labelledby="story-title">
+      <div className="story-hero">
+        <p className="story-eyebrow">Our story</p>
+        <h1 id="story-title" className="story-title">
+          Building a legacy takes time, consistency, and heart
+        </h1>
+        <p className="story-lead">
+          From a single Karachi grill to a nationwide favorite, we have grown by
+          obsessing over flavor, speed, and the kind of service that keeps people
+          coming back.
+        </p>
       </div>
-    </>
+
+      <div className="story-grid">
+        <article className="story-card story-highlight">
+          <h2>What drives us</h2>
+          <ul>
+            <li>Bold flavor, smashed fresh on a scorching grill</li>
+            <li>Experimentation that keeps the menu evolving</li>
+            <li>Service that feels personal, fast, and reliable</li>
+          </ul>
+        </article>
+
+        {milestones.map((item) => (
+          <article key={item.year} className="story-card">
+            <div className="story-year">{item.year}</div>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }

@@ -1,55 +1,101 @@
 @import "../../styles/globals.css";
 
 .story {
-  margin-top: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  line-height: 1.8;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  gap: 2.5rem;
+  color: var(--color-light-text);
 }
 
-.story-heading {
+.story-hero {
   text-align: center;
-  margin-bottom: 2rem;
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
 }
 
-.story-heading h1 {
-  font-size: 2rem;
-  font-weight: 700;
+.story-eyebrow {
+  font-size: 0.9rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
   color: var(--color-primary);
-  border-bottom: 3px solid var(--color-primary); /* highlight underline */
-  display: inline-block;
-  padding-bottom: 0.5rem;
+  font-weight: 600;
 }
 
-.story-paragraph p {
-  margin-bottom: 1.5rem;
-  font-size: 1.2rem;
-  color: #fff;
-  text-align: justify; /* neat paragraph layout */
-  /* margin-left: 0.3rem; */
-  margin-right:4rem;
-  font-weight: 350;
+.story-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: 0;
+  color: var(--color-secondary);
 }
 
-.story-paragraph p:last-child {
-  margin-bottom: 0;
+.story-lead {
+  margin: 0;
+  max-width: 780px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #e8e4dc;
 }
 
-/* Responsive tweaks */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.story-card {
+  background: linear-gradient(145deg, rgba(27, 22, 16, 0.9), rgba(20, 15, 10, 0.9));
+  border: 1px solid rgba(255, 196, 4, 0.2);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.28);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.story-highlight {
+  background: linear-gradient(135deg, rgba(255, 196, 4, 0.14), rgba(255, 171, 4, 0.08));
+  border-color: rgba(255, 196, 4, 0.4);
+}
+
+.story-card h2,
+.story-card h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+}
+
+.story-card p {
+  margin: 0;
+  line-height: 1.65;
+  color: #ddd6c5;
+}
+
+.story-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.5rem;
+  color: #e8e4dc;
+}
+
+.story-year {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
 @media (max-width: 768px) {
   .story {
-    padding: 1.5rem;
+    padding: 3rem 1.1rem;
   }
 
-  .story-heading h1 {
-    font-size: 1.5rem;
-  }
-
-  .story-paragraph p {
-    font-size: 1.2rem;
+  .story-lead {
+    font-size: 1rem;
   }
 }
