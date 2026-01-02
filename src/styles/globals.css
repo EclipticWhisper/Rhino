@@ -3,10 +3,13 @@
 ================================================================= */
 
 /* IMPORT FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&family=Bungee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Segoe+UI&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
 
 /* ===== COLOR VARIABLES ===== */
 :root {
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-heading: "Space Grotesk", "Inter", "Segoe UI", system-ui, sans-serif;
+
   --color-primary: #ff9800;
   --color-secondary: #ffc404;
   --color-dark-bg: #1f1a09;

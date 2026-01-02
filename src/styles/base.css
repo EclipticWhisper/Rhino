@@ -1,0 +1,14 @@
+/* Base resets and body styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(var(--color-dark-bg-alt), #2c2306);
+  color: var(--color-light-text);
+  min-height: 100vh;
+}
