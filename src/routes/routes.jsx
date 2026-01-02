@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Root.jsx";
 import PageError from "../components/Error/PageError.jsx";
-import App from "../App.jsx";
+import HomePage from "../pages/HomePage.jsx";
 import Meals from "../components/Meals.jsx";
-import About from "../components/About/About.jsx";
-import RestaurantJob from "../components/Restaurant-jobs/RestaurantJobs.jsx";
-import OurStory from "../components/OurStory/OurStory.jsx";
+import AboutPage from "../pages/AboutPage.jsx";
+import JobsPage from "../pages/JobsPage.jsx";
+import StoryPage from "../pages/StoryPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,11 +13,11 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <PageError />,
     children: [
-      { index: true, element: <App /> },
+      { index: true, element: <HomePage /> },
       { path: "meals", element: <Meals /> },
-      { path: "about", element: <About /> },
-      { path: "restaurant-jobs", element: <RestaurantJob /> },
-      { path: "our-story", element: <OurStory /> },
+      { path: "about", element: <AboutPage /> },
+      { path: "restaurant-jobs", element: <JobsPage /> },
+      { path: "our-story", element: <StoryPage /> },
     ],
   },
 ]);

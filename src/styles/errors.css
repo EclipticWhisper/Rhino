@@ -1,0 +1,15 @@
+/* Error notification */
+.error {
+  width: 90%;
+  max-width: 25rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #f9b8b8;
+  color: #6d0b0b;
+  border-radius: 6px;
+}
+
+.error h2,
+.error p {
+  margin: 0;
+}

@@ -1,0 +1,104 @@
+/* Meals section */
+#meals {
+  width: 90%;
+  max-width: 70rem;
+  list-style: none;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.section-heading,
+#meals-heading {
+  text-align: center;
+  margin: 0 auto 1.75rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+}
+
+.meal-item {
+  background-color: #1d1a16;
+  border-radius: 1rem;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.meal-item article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.meal-item img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.meal-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.75rem 0;
+}
+
+.meal-item-description {
+  margin: 1rem;
+  font-weight: 100;
+}
+
+.meal-item-price {
+  display: inline-block;
+  background-color: #312c1d;
+  color: #ffc404;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  border-radius: 4px;
+}
+
+/* Meal cards responsive tweaks */
+@media (max-width: 900px) {
+  #meals {
+    width: 94%;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.25rem;
+  }
+
+  .meal-item img {
+    height: 16rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #meals {
+    width: 96%;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.25rem;
+  }
+
+  .meal-item {
+    border-radius: 0.75rem;
+  }
+
+  .meal-item img {
+    height: 14rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .meal-item h3 {
+    font-size: 1.25rem;
+  }
+
+  .meal-item-price {
+    padding: 0.4rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
