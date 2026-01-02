@@ -1,3 +1,5 @@
+@import "../../styles/globals.css";
+
 .story {
   margin-top: 4rem;
   display: flex;
@@ -17,8 +19,8 @@
 .story-heading h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #ff9800;
-  border-bottom: 3px solid #ff9800; /* highlight underline */
+  color: var(--color-primary);
+  border-bottom: 3px solid var(--color-primary); /* highlight underline */
   display: inline-block;
   padding-bottom: 0.5rem;
 }

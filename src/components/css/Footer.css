@@ -1,3 +1,5 @@
+@import "../../styles/globals.css";
+
 .footer {
   height: auto;
   width: 100%;
@@ -5,7 +7,7 @@
   justify-content: space-around;
   align-items: flex-start;
   margin-top: 5rem;
-  border-top: 3px solid #ff9800;
+  border-top: 3px solid var(--color-primary);
   gap: 3rem;
   padding: 2rem;
   flex-wrap: wrap; /* allow wrapping */
@@ -20,7 +22,7 @@
 
 /* Add vertical line separators (desktop only) */
 .footer > div:not(:last-child) {
-  border-right: 2px solid #ff9800;
+  border-right: 2px solid var(--color-primary);
 }
 
 /* Footer image */
@@ -74,7 +76,7 @@ p {
 /* Links */
 a {
   text-decoration: none;
-  color: #ff9800; /* orange to match glow */
+  color: var(--color-primary); /* orange to match glow */
   font-weight: 500;
   transition: color 0.3s ease, transform 0.2s ease;
 }

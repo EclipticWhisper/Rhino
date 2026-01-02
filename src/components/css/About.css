@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "../../styles/globals.css";
 
 .main-container {
   position: relative;
@@ -14,10 +14,10 @@
 
 @keyframes glow {
   0% {
-    box-shadow: 0 4px 10px -2px #ff9800;
+    box-shadow: var(--shadow-primary);
   }
   100% {
-    box-shadow: 0 4px 20px 0 #ff9800;
+    box-shadow: var(--shadow-primary-hover);
   }
 }
 
@@ -42,8 +42,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid #ff9800;
-  box-shadow: 0 4px 12px -2px #ff9800;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 4px 12px -2px var(--color-primary);
   animation: glow 1.5s infinite alternate;
 }
 
@@ -53,8 +53,8 @@
   backface-visibility: hidden;
   transform: rotateY(180deg);
   border-radius: 20px;
-  border: 3px solid #ff9800;
-  box-shadow: 0 4px 12px -2px #ff9800;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 4px 12px -2px var(--color-primary);
   animation: glow 1.5s infinite alternate;
 }
 
@@ -69,7 +69,7 @@
 .ruler {
   border: none;
   height: 2px;
-  background-color: #ff9800;
+  background-color: var(--color-primary);
   margin-top: 15rem;
   width: 70%;
 }

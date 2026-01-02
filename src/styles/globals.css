@@ -1,0 +1,108 @@
+/* =================================================================
+   SHARED GLOBALS & VARIABLES - Eliminates redundancy across all CSS
+================================================================= */
+
+/* IMPORT FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&family=Bungee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Segoe+UI&display=swap");
+
+/* ===== COLOR VARIABLES ===== */
+:root {
+  --color-primary: #ff9800;
+  --color-secondary: #ffc404;
+  --color-dark-bg: #1f1a09;
+  --color-dark-bg-alt: #29251c;
+  --color-light-text: #d9e2f1;
+  --color-light-bg: #e4ddd4;
+  --color-card-bg: #1d1a16;
+  --color-accent-bg: #312c1d;
+  --color-error: #f9b8b8;
+  --color-error-text: #6d0b0b;
+  
+  /* BORDERS & SHADOWS */
+  --border-primary: 3px solid var(--color-primary);
+  --border-secondary: 1px solid #ccc;
+  --shadow-primary: 0 4px 12px -2px var(--color-primary);
+  --shadow-primary-hover: 0 4px 20px 0 var(--color-primary);
+  --shadow-modal: 0 2px 8px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== SHARED ANIMATIONS ===== */
+@keyframes glow {
+  0% {
+    box-shadow: var(--shadow-primary);
+  }
+  100% {
+    box-shadow: var(--shadow-primary-hover);
+  }
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SHARED UTILITY CLASSES ===== */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.glow-border {
+  border: var(--border-primary);
+  box-shadow: var(--shadow-primary);
+  animation: glow 1.5s infinite alternate;
+}
+
+.input-focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px 2px rgba(255, 152, 0, 0.3);
+  outline: none;
+}

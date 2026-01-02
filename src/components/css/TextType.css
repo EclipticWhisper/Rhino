@@ -1,12 +1,21 @@
 .text-type {
-  display: inline-block;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
   white-space: pre-wrap;
+  line-height: 1.2;
+}
+
+.text-type__content {
+  color: var(--color-secondary, #ffc404);
 }
 
 .text-type__cursor {
-  margin-left: 0.25rem;
+  margin-left: 0.1rem;
   display: inline-block;
   opacity: 1;
+  color: var(--color-primary, #ff9800);
+  font-weight: 700;
 }
 
 .text-type__cursor--hidden {
