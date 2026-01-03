@@ -6,6 +6,7 @@ import Meals from "../components/Meals.jsx";
 import AboutPage from "../pages/AboutPage.jsx";
 import JobsPage from "../pages/JobsPage.jsx";
 import StoryPage from "../pages/StoryPage.jsx";
+import ContactPage from "../pages/ContactPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "meals", element: <Meals /> },
       { path: "about", element: <AboutPage /> },
+      { path: "contact", element: <ContactPage /> },
       { path: "restaurant-jobs", element: <JobsPage /> },
       { path: "our-story", element: <StoryPage /> },
     ],
