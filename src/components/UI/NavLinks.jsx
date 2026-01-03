@@ -5,6 +5,7 @@ export default function NavLinks() {
     { name: "Home", path: "/" },
     { name: "Meals", path: "meals" },
     { name: "About", path: "about" },
+    { name: "Contact", path: "contact" },
   ];
 
   return (
