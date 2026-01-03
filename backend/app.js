@@ -58,6 +58,44 @@ app.post('/orders', async (req, res) => {
   res.status(201).json({ message: 'Order created!' });
 });
 
+app.post('/contact', async (req, res) => {
+  const contactData = req.body;
+
+  if (
+    !contactData.name ||
+    contactData.name.trim() === '' ||
+    !contactData.email ||
+    !contactData.email.includes('@') ||
+    !contactData.subject ||
+    contactData.subject.trim() === '' ||
+    !contactData.message ||
+    contactData.message.trim() === ''
+  ) {
+    return res.status(400).json({
+      message: 'Missing data: Name, email, subject, or message is missing.',
+    });
+  }
+
+  const newContact = {
+    ...contactData,
+    id: (Math.random() * 1000).toString(),
+    timestamp: new Date().toISOString(),
+  };
+
+  // Save contact to contact.json file
+  try {
+    const contacts = await fs.readFile('./data/contact.json', 'utf8');
+    const allContacts = JSON.parse(contacts);
+    allContacts.push(newContact);
+    await fs.writeFile('./data/contact.json', JSON.stringify(allContacts, null, 2));
+  } catch (error) {
+    // If file doesn't exist, create it with the new contact
+    await fs.writeFile('./data/contact.json', JSON.stringify([newContact], null, 2));
+  }
+
+  res.status(200).json({ message: 'Message received successfully!' });
+});
+
 app.use((req, res) => {
   if (req.method === 'OPTIONS') {
     return res.sendStatus(200);
