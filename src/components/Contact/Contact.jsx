@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "../css/Contact.css";
+import { buildApiUrl } from "../../config/api";
+
+const CONTACT_URL = buildApiUrl("/contact");
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -27,8 +30,7 @@ export default function Contact() {
     setSubmitMessage("");
 
     try {
-      // You can replace this with your actual backend endpoint
-      const response = await fetch("http://localhost:3000/contact", {
+      const response = await fetch(CONTACT_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

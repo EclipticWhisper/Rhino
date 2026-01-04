@@ -2,6 +2,7 @@ import { currencyFormatter } from "../Utils/CurrencyFormatter";
 import Button from "./UI/Button";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../Store/CartRedux.js";
+import { buildAssetUrl } from "../config/api";
 
 export default function MealItem({ meal }) {
   const dispatch = useDispatch();
@@ -14,8 +15,8 @@ export default function MealItem({ meal }) {
     <li className="meal-item">
       <article>
         <div className="meal-image-wrapper">
-          <img 
-            src={`http://localhost:3000/${meal.image}`} 
+          <img
+            src={buildAssetUrl(meal.image)}
             alt={meal.name}
             loading="lazy"
           />

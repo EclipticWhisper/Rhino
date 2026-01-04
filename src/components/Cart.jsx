@@ -24,7 +24,7 @@ export default function Cart() {
   }
 
   function handleShowCart() {
-    dispatch(progressActions.showCheckOut());
+    dispatch(progressActions.showCheckout());
   }
 
   function handleIncrease(item) {

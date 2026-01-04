@@ -12,7 +12,7 @@ const progressSlice = createSlice({
     closeCart(state) {
       state.progress = "";
     },
-    showCheckOut(state) {
+    showCheckout(state) {
       state.progress = "checkout";
     },
     closeCheckout(state) {
