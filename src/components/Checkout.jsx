@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { progressActions } from "../Store/Progress";
 import useHttp from "../Hooks/useHttp";
 import { cartActions } from "../Store/CartRedux";
+import { buildApiUrl } from "../config/api";
 
 const configRequest = {
   method: "POST",
@@ -13,6 +14,8 @@ const configRequest = {
     "Content-Type": "application/json",
   },
 };
+
+const ORDERS_URL = buildApiUrl("/orders");
 
 export default function Checkout() {
   const cartItems = useSelector((state) => state.cart.Items);
@@ -30,7 +33,7 @@ export default function Checkout() {
     data,
     sendRequest,
     clearData,
-  } = useHttp("http://localhost:3000/orders", configRequest);
+  } = useHttp(ORDERS_URL, configRequest);
 
   function handleClose() {
     dispatch(progressActions.closeCheckout());

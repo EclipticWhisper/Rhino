@@ -2,18 +2,18 @@ import { useState } from "react";
 import useHttp from "../Hooks/useHttp";
 import MealItem from "./MealItem.jsx";
 import Error from "./Error.jsx";
+import { buildApiUrl } from "../config/api";
 
-// Centralize API base so it can be overridden via Vite env
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:3000";
 const requestConfig = { method: "GET" };
-const ITEMS_PER_PAGE = 6; // Initial meals shown
+const ITEMS_PER_PAGE = 6;
+const MEALS_URL = buildApiUrl("/meals");
 
 export default function Meals() {
   const {
     data: loadedMeals,
     isLoading,
     error,
-  } = useHttp(`${API_BASE}/meals`, requestConfig, []);
+  } = useHttp(MEALS_URL, requestConfig, []);
 
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
 
@@ -46,18 +46,9 @@ export default function Meals() {
       </ul>
       {hasMore && (
         <div className="center" style={{ marginTop: "2rem" }}>
-          <button 
+          <button
             onClick={handleLoadMore}
-            style={{
-              padding: "10px 30px",
-              fontSize: "1rem",
-              backgroundColor: "#d4a574",
-              color: "white",
-              border: "none",
-              borderRadius: "4px",
-              cursor: "pointer",
-              fontWeight: "600"
-            }}
+            className="load-more-btn"
           >
             See More Meals
           </button>
