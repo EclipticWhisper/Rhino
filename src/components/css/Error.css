@@ -1,16 +1,97 @@
-body {
-  margin: 0;
-  height: 100vh;
-  position: relative;
+.error-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, rgba(27, 22, 16, 0.4), rgba(20, 15, 10, 0.6));
 }
 
-.errorDiv {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.error-content {
+  text-align: center;
+  max-width: 600px;
+  background: linear-gradient(135deg, rgba(27, 22, 16, 0.95), rgba(20, 15, 10, 0.92));
+  border: 1px solid rgba(255, 196, 4, 0.25);
+  border-radius: 20px;
+  padding: clamp(2rem, 4vw, 3rem);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-.errorDiv h1 {
-  font-size: 5rem;
+.error-code {
+  font-size: clamp(5rem, 12vw, 8rem);
+  font-weight: 900;
+  color: #ffc404;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  text-shadow: 0 4px 20px rgba(255, 196, 4, 0.3);
+}
+
+.error-content h1 {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  color: var(--color-secondary);
+  margin: 0 0 1rem 0;
+  font-family: var(--font-heading);
+}
+
+.error-message {
+  color: #e8e4dc;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.error-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.error-btn--primary {
+  background: #ffc404;
+  color: #1f1a09;
+  border: 1px solid #ffc404;
+}
+
+.error-btn--primary:hover {
+  background: #ffab04;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 196, 4, 0.35);
+}
+
+.error-btn--secondary {
+  background: transparent;
+  color: #ffc404;
+  border: 1px solid #ffc404;
+}
+
+.error-btn--secondary:hover {
+  background: rgba(255, 196, 4, 0.12);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .error-page {
+    padding: 2rem 1rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .error-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
