@@ -1,0 +1,177 @@
+/* ===================================
+   THEME SYSTEM - Dark/Light Mode
+=================================== */
+
+/* Base theme transition for smooth switching */
+:root {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme (Default) */
+:root {
+  --bg-primary: #1f1a09;
+  --bg-secondary: #29251c;
+  --bg-card: #1d1a16;
+  --bg-accent: #312c1d;
+  --bg-light: #e4ddd4;
+  
+  --text-primary: #d9e2f1;
+  --text-secondary: #b8b8b8;
+  --text-dark: #1f1a09;
+  --text-accent: #ff9800;
+  
+  --border-color: #ccc;
+  --border-dark: #3d3d3d;
+  
+  --shadow-light: 0 1px 6px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.6);
+  --shadow-heavy: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark Theme */
+.dark-theme {
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #252525;
+  --bg-accent: #2d2d2d;
+  --bg-light: #333;
+  
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-dark: #e0e0e0;
+  --text-accent: #ffb347;
+  
+  --border-color: #444;
+  --border-dark: #555;
+  
+  --shadow-light: 0 1px 6px rgba(0, 0, 0, 0.5);
+  --shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.8);
+  --shadow-heavy: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Apply theme to body and main elements */
+body {
+  background: linear-gradient(var(--bg-secondary), var(--bg-primary));
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header theming */
+#main-header {
+  background: linear-gradient(90deg, var(--bg-secondary), var(--bg-primary));
+  transition: background 0.3s ease;
+}
+
+/* Card and meal item theming */
+.meal-item,
+.cart-item,
+#cart,
+#checkout {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-dark);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-theme .meal-item:hover,
+.dark-theme .cart-item:hover {
+  background-color: var(--bg-accent);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Button theming */
+.button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme .button {
+  background-color: var(--bg-accent);
+  color: var(--text-primary);
+}
+
+.dark-theme .button:hover {
+  background-color: var(--color-primary);
+}
+
+/* Input and form theming */
+input,
+textarea,
+select {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  border-color: var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-theme input,
+.dark-theme textarea,
+.dark-theme select {
+  background-color: var(--bg-accent);
+  color: var(--text-primary);
+  border-color: var(--border-dark);
+}
+
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Modal theming */
+.modal {
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-heavy);
+  transition: background-color 0.3s ease;
+}
+
+/* Text theming */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+p {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+/* Link theming */
+a {
+  color: var(--text-accent);
+  transition: color 0.3s ease;
+}
+
+.dark-theme a:hover {
+  color: var(--color-secondary);
+}
+
+/* Footer theming */
+footer {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar theming */
+.dark-theme ::-webkit-scrollbar {
+  background-color: var(--bg-secondary);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background-color: var(--bg-accent);
+  border: 2px solid var(--bg-secondary);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-dark);
+}
+
+/* Image brightness adjustment for dark mode */
+.dark-theme img:not([src*="logo"]) {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.dark-theme img:not([src*="logo"]):hover {
+  opacity: 1;
+}

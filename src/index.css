@@ -1,6 +1,8 @@
 @import "./styles/globals.css";
 @import "./styles/base.css";
 @import "./styles/utilities.css";
+@import "./styles/theme.css";
+@import "./styles/theme-toggle.css";
 @import "./styles/header.css";
 @import "./styles/meals.css";
 @import "./styles/cart.css";

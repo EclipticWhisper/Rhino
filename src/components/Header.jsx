@@ -4,6 +4,7 @@ import Button from "./UI/Button.jsx";
 import logoImg from "../assets/logo.jpg";
 import NavLinks from "./UI/NavLinks.jsx";
 import HamburgerComponent from "./UI/Hamburger.jsx";
+import ThemeToggle from "./UI/ThemeToggle.jsx";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -29,8 +30,9 @@ export default function Header() {
         <NavLinks />
       </nav>
 
-      {/* Cart Button */}
+      {/* Cart Button and Theme Toggle */}
       <div className="header-actions">
+        <ThemeToggle />
         <Button 
           textOnly={true} 
           onClick={handleShowCart}

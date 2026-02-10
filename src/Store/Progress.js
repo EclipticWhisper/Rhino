@@ -1,5 +1,7 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 import cartSlice from "./CartRedux";
+import themeSlice from "./ThemeSlice";
+
 const progressState = { progress: "" };
 
 const progressSlice = createSlice({
@@ -24,6 +26,7 @@ const store = configureStore({
   reducer: {
     progress: progressSlice.reducer, // improved for future scalability,
     cart: cartSlice.reducer,
+    theme: themeSlice.reducer,
   },
 });
 
