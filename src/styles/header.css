@@ -48,6 +48,7 @@
   align-items: center;
   gap: 1rem;
   min-width: fit-content;
+  flex-wrap: nowrap;
 }
 
 .cart-button {

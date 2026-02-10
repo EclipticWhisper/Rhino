@@ -1,0 +1,94 @@
+/* ===================================
+   THEME TOGGLE COMPONENT STYLES
+=================================== */
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle-track {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  background: var(--toggle-bg);
+  border-radius: 50px;
+  padding: 4px;
+  transition: background-color 0.3s ease;
+  border: 2px solid var(--toggle-border);
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: var(--toggle-thumb-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .theme-toggle-thumb {
+  left: calc(100% - 28px);
+}
+
+.theme-icon {
+  font-size: 14px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Light mode toggle colors */
+:root {
+  --toggle-bg: #e4ddd4;
+  --toggle-border: #ccc;
+  --toggle-thumb-bg: #fff;
+}
+
+/* Dark mode toggle colors */
+.dark-theme {
+  --toggle-bg: #2a2a2a;
+  --toggle-border: #444;
+  --toggle-thumb-bg: #1a1a1a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .theme-toggle-track {
+    width: 50px;
+    height: 28px;
+  }
+
+  .theme-toggle-thumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dark-theme .theme-toggle-thumb {
+    left: calc(100% - 24px);
+  }
+
+  .theme-icon {
+    font-size: 12px;
+  }
+}
