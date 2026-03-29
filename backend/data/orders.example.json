@@ -1,0 +1,58 @@
+[
+  {
+    "items": [
+      {
+        "id": "m1",
+        "name": "Mac & Cheese",
+        "price": "8.99",
+        "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
+        "image": "images/mac-and-cheese.jpg",
+        "quantity": 2
+      },
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "12.99",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 1
+      }
+    ],
+    "customer": {
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "street": "123 Main Street",
+      "postal-code": "10001",
+      "city": "New York"
+    },
+    "id": "00000000-0000-0000-0000-000000000001"
+  },
+  {
+    "items": [
+      {
+        "id": "m6",
+        "name": "Grilled Chicken Sandwich",
+        "price": "10.99",
+        "description": "Tender grilled chicken breast with avocado, bacon, lettuce, and honey mustard on a toasted bun.",
+        "image": "images/grilled-chicken-sandwich.jpg",
+        "quantity": 1
+      },
+      {
+        "id": "m3",
+        "name": "Caesar Salad",
+        "price": "7.99",
+        "description": "Romaine lettuce tossed in Caesar dressing, topped with croutons and parmesan shavings.",
+        "image": "images/caesar-salad.jpg",
+        "quantity": 1
+      }
+    ],
+    "customer": {
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "street": "456 Oak Avenue",
+      "postal-code": "90001",
+      "city": "Los Angeles"
+    },
+    "id": "00000000-0000-0000-0000-000000000002"
+  }
+]

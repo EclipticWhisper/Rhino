@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Runtime order data — contains user PII; seed from orders.example.json
+backend/data/orders.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
