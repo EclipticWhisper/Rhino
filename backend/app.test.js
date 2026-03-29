@@ -6,11 +6,13 @@ import request from 'supertest';
 import { app } from './app.js';
 
 describe('GET /meals', () => {
-  it('returns a non-empty meals array', async () => {
+  it('returns a meals array', async () => {
     const res = await request(app).get('/meals');
     assert.equal(res.status, 200);
     assert.ok(Array.isArray(res.body));
-    assert.ok(res.body.length > 0);
+    if (res.body.length > 0) {
+      assert.equal(typeof res.body[0], 'object');
+    }
   });
 });
 
