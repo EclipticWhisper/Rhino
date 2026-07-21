@@ -1,24 +1,22 @@
+import { useMemo } from "react";
 import Modal from "./UI/Modal";
 import { currencyFormatter } from "../Utils/CurrencyFormatter.js";
 import Button from "./UI/Button.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { progressActions } from "../Store/Progress.js";
-import { cartActions } from "../Store/CartRedux.js"; // Your redux cart slice
+import { cartActions } from "../Store/CartRedux.js";
 import CartItem from "./CartItem.jsx";
 
 export default function Cart() {
   const dispatch = useDispatch();
-
-  // Get cart state from Redux
   const cartItems = useSelector((state) => state.cart.Items);
   const progress = useSelector((state) => state.progress.progress);
-  // Calculate total price
-  const cartTotalPrice = cartItems.reduce(
-    (totalPrice, item) => totalPrice + item.quantity * item.price,
-    0
+
+  const cartTotalPrice = useMemo(
+    () => cartItems.reduce((totalPrice, item) => totalPrice + item.quantity * item.price, 0),
+    [cartItems]
   );
 
-  // Handlers
   function handleCloseCart() {
     dispatch(progressActions.closeCart());
   }

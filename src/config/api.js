@@ -1,4 +1,4 @@
-export const API_BASE = (import.meta.env?.VITE_API_BASE || "http://localhost:3000").replace(/\/$/, "");
+export const API_BASE = (import.meta.env?.VITE_API_BASE || "http://localhost:4000").replace(/\/$/, "");
 
 export function buildApiUrl(path = "") {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;

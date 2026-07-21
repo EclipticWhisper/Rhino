@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import Modal from "./UI/Modal";
 import { currencyFormatter } from "../Utils/CurrencyFormatter";
 import Input from "./UI/Input";
@@ -22,9 +23,9 @@ export default function Checkout() {
   const dispatch = useDispatch();
   const progress = useSelector((state) => state.progress.progress);
 
-  const cartTotalPrice = cartItems.reduce(
-    (totalPrice, item) => totalPrice + item.quantity * item.price,
-    0
+  const cartTotalPrice = useMemo(
+    () => cartItems.reduce((totalPrice, item) => totalPrice + item.quantity * item.price, 0),
+    [cartItems]
   );
 
   const {
@@ -91,7 +92,7 @@ export default function Checkout() {
         <h2>Checkout</h2>
         <p>Total Amount: {currencyFormatter.format(cartTotalPrice)} </p>
         <Input label="Full Name" type="text" id="name" />
-        <Input label="E-Mail Address" type="text" id="email" />
+        <Input label="E-Mail Address" type="email" id="email" />
         <Input label="Street" type="text" id="street" />
         <div className="control-row">
           <Input label="Postal Code" type="text" id="postal-code" />

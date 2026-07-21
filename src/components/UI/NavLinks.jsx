@@ -9,15 +9,15 @@ export default function NavLinks() {
   ];
 
   return (
-    <ul id="Navul">
-      {menuList.map((menu, index) => (
-        <li id="Navli" key={index}>
+    <ul className="nav-list">
+      {menuList.map((menu) => (
+        <li key={menu.path}>
           <NavLink
             to={menu.path}
             className={({ isActive }) =>
               `nav-link ${isActive ? "isActive" : ""}`
             }
-            end={menu.path === "/"} // only exact match for Home
+            end={menu.path === "/"}
           >
             {menu.name}
           </NavLink>
