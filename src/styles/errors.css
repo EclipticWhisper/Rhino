@@ -4,8 +4,8 @@
   max-width: 25rem;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #f9b8b8;
-  color: #6d0b0b;
+  background-color: var(--color-error);
+  color: var(--color-error-text);
   border-radius: 6px;
 }
 

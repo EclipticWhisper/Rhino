@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Hamburger from "hamburger-react";
 import NavLinks from "./NavLinks";
 
 export default function HamburgerComponent() {
   const [open, setOpen] = useState(false);
+
+  const handleClose = useCallback(() => setOpen(false), []);
 
   return (
     <>
@@ -20,7 +22,7 @@ export default function HamburgerComponent() {
             <Hamburger size={24} toggled={open} toggle={setOpen} color="#ffc404" />
           </header>
           <main className="hamburgerM">
-            <NavLinks />
+            <NavLinks onNavigate={handleClose} />
           </main>
         </div>
       )}

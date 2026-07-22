@@ -85,7 +85,7 @@
 .hero-description {
   font-size: 1.125rem;
   line-height: 1.7;
-  color: #d9e2f1;
+  color: var(--color-light-text);
   margin: 0;
   max-width: 550px;
   opacity: 0.95;
@@ -111,7 +111,7 @@
 
 .feature-text {
   font-size: 0.95rem;
-  color: #d9e2f1;
+  color: var(--color-light-text);
   font-weight: 500;
 }
 
