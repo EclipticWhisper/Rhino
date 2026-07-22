@@ -1,6 +1,4 @@
 /* ===== MAIN WRAPPER ===== */
-@import "../../styles/globals.css";
-
 .restaurant-job {
   display: flex;
   justify-content: center;

@@ -86,7 +86,8 @@
   align-items: center;
 }
 
-.text-center {
+.text-center,
+.center {
   text-align: center;
 }
 

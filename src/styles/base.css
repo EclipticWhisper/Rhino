@@ -1,6 +1,12 @@
-/* Base resets and body styles */
-* {
+/* Base resets */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -8,7 +14,10 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(var(--color-dark-bg-alt), #2c2306);
-  color: var(--color-light-text);
   min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }

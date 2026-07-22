@@ -90,8 +90,8 @@
 }
 
 .cart-button:hover {
-  background-color: #ffab04 !important;
-  border-color: #ffab04 !important;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(255, 196, 4, 0.4);
 }

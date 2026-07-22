@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function NavLinks() {
+export default function NavLinks({ onNavigate }) {
   const menuList = [
     { name: "Home", path: "/" },
     { name: "Meals", path: "meals" },
@@ -18,6 +18,7 @@ export default function NavLinks() {
               `nav-link ${isActive ? "isActive" : ""}`
             }
             end={menu.path === "/"}
+            onClick={onNavigate}
           >
             {menu.name}
           </NavLink>

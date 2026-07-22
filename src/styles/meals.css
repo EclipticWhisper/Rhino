@@ -85,7 +85,7 @@
 .meal-description {
   margin: 0;
   font-size: 0.9rem;
-  color: #ddd6c5;
+  color: var(--text-primary);
   line-height: 1.5;
   font-weight: 400;
 }
@@ -126,8 +126,8 @@
 .load-more-btn {
   padding: 0.65rem 2rem;
   font-size: 1rem;
-  background-color: #d4a574;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-dark-bg);
   border: none;
   border-radius: 8px;
   cursor: pointer;
