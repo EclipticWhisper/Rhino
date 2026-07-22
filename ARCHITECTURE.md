@@ -9,7 +9,7 @@ graph TB
         Router[React Router]
         Redux[Redux Store]
         Components[React Components]
-        Motion[Framer Motion]
+        Motion[GSAP]
     end
     
     subgraph Server["Backend (Express.js)"]
@@ -201,31 +201,23 @@ graph LR
     style Backend fill:#2c1810
 ```
 
-## Animation Flow (Framer Motion)
+## Animation Flow (GSAP & CSS)
 
 ```mermaid
 graph TD
     Viewport[Scroll into Viewport] --> Observer[IntersectionObserver]
     Observer --> Trigger[Trigger Animation]
     
-    Trigger --> Variants[Motion Variants]
+    Trigger --> GSAP[GSAP timelines / tweens]
+    Trigger --> CSS[CSS transitions]
     
-    Variants --> FadeUp[fadeUp]
-    Variants --> FadeUpSlow[fadeUpSlow]
-    Variants --> ScaleIn[scaleIn]
-    Variants --> Stagger[stagger]
-    
-    FadeUp --> Component1[Hero]
-    FadeUpSlow --> Component2[Section Headers]
-    ScaleIn --> Component3[Cards]
-    Stagger --> Component4[Lists]
+    GSAP --> Component1[Hero / TextType]
+    CSS --> Component2[Layout & UI]
     
     Component1 --> Render[Animate & Render]
     Component2 --> Render
-    Component3 --> Render
-    Component4 --> Render
     
-    style Variants fill:#ffc404
+    style GSAP fill:#ffc404
 ```
 
 ## User Journey Flow
@@ -274,14 +266,16 @@ graph TB
         React[React 19]
         ReactRouter[React Router v7]
         ReduxToolkit[Redux Toolkit]
-        FramerMotion[Framer Motion]
+        GSAP[GSAP]
         Vite[Vite Build Tool]
     end
     
     subgraph Backend
         Express[Express.js]
-        BodyParser[Body Parser]
+        JSONBody[express.json]
         NodeFS[Node FS Module]
+        Helmet[Helmet]
+        CORS[CORS]
     end
     
     subgraph Styling
@@ -299,11 +293,13 @@ graph TB
     React --> Vite
     React --> ReactRouter
     React --> ReduxToolkit
-    React --> FramerMotion
+    React --> GSAP
     React --> CSS
     
-    Express --> BodyParser
+    Express --> JSONBody
     Express --> NodeFS
+    Express --> Helmet
+    Express --> CORS
     
     style React fill:#ffc404
     style Express fill:#ffab04
@@ -314,7 +310,8 @@ graph TB
 ```
 Rhino_Daizo App/
 ├── backend/
-│   ├── app.js              → Express server
+│   ├── app.js              → Express app (routes & middleware)
+│   ├── server.js           → HTTP listen entry
 │   ├── package.json        → Backend dependencies
 │   ├── data/               → JSON data storage
 │   │   ├── available-meals.json

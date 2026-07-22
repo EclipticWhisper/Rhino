@@ -2,7 +2,20 @@ import { useCallback, useEffect, useState } from "react";
 
 async function sendHttpRequest(url, config) {
   const response = await fetch(url, config);
-  const resData = await response.json();
+  const contentType = response.headers.get("content-type") || "";
+  let resData;
+
+  if (contentType.includes("application/json")) {
+    const text = await response.text();
+    try {
+      resData = text ? JSON.parse(text) : {};
+    } catch {
+      throw new Error("The server returned an invalid response.");
+    }
+  } else {
+    const text = await response.text();
+    resData = { message: text || "The server responded with an error" };
+  }
 
   if (!response.ok) {
     throw new Error(resData.message || "The server responded with an error");
@@ -21,14 +34,14 @@ export default function useHttp(url, config, initialData) {
   }
 
   const sendRequest = useCallback(
-    async function sendRequest(data) {
+    async function sendRequest(body) {
       setIsLoading(true);
-      // setIsError(null);
+      setIsError(undefined);
       try {
-        const resData = await sendHttpRequest(url, { ...config, body: data });
+        const resData = await sendHttpRequest(url, { ...config, body });
         setData(resData);
-      } catch (error) {
-        setIsError(error.message || "Something went wrong.");
+      } catch (err) {
+        setIsError(err.message || "Something went wrong.");
       }
       setIsLoading(false);
     },
