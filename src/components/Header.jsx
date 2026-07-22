@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useMemo, useCallback } from "react";
 import { progressActions } from "../Store/Progress.js";
 import Button from "./UI/Button.jsx";
 import logoImg from "../assets/logo.jpg";
@@ -10,31 +11,27 @@ export default function Header() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.Items);
 
-  // Calculate total items in cart
-  const totalCartItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalCartItems = useMemo(
+    () => cartItems.reduce((total, item) => total + item.quantity, 0),
+    [cartItems]
+  );
 
-  // Handle cart display
-  const handleShowCart = () => {
+  const handleShowCart = useCallback(() => {
     dispatch(progressActions.showCart());
-  };
+  }, [dispatch]);
 
   return (
     <header id="main-header" role="banner">
-      {/* Logo Section */}
       <div id="title">
-        <img src={logoImg} alt="Rhino_Daizo Restaurant Logo" loading="lazy" />
+        <img src={logoImg} alt="Rhino_Daizo Restaurant Logo" />
       </div>
-
-      {/* Desktop Navigation */}
       <nav className="nav-desktop" aria-label="Main navigation">
         <NavLinks />
       </nav>
-
-      {/* Cart Button and Theme Toggle */}
       <div className="header-actions">
         <ThemeToggle />
-        <Button 
-          textOnly={true} 
+        <Button
+          textOnly={true}
           onClick={handleShowCart}
           className="cart-button"
           aria-label={`Shopping cart with ${totalCartItems} items`}
@@ -44,8 +41,6 @@ export default function Header() {
           <span className="cart-count">{totalCartItems}</span>
         </Button>
       </div>
-
-      {/* Mobile Hamburger Menu */}
       <HamburgerComponent />
     </header>
   );

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 async function sendHttpRequest(url, config) {
   const response = await fetch(url, config);
@@ -28,6 +28,14 @@ export default function useHttp(url, config, initialData) {
   const [data, setData] = useState(initialData);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setIsError] = useState();
+  const mountedRef = useRef(true);
+
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
 
   function clearData() {
     setData(initialData);
@@ -39,11 +47,17 @@ export default function useHttp(url, config, initialData) {
       setIsError(undefined);
       try {
         const resData = await sendHttpRequest(url, { ...config, body });
-        setData(resData);
+        if (mountedRef.current) {
+          setData(resData);
+        }
       } catch (err) {
-        setIsError(err.message || "Something went wrong.");
+        if (mountedRef.current) {
+          setIsError(err.message || "Something went wrong.");
+        }
       }
-      setIsLoading(false);
+      if (mountedRef.current) {
+        setIsLoading(false);
+      }
     },
     [url, config]
   );
