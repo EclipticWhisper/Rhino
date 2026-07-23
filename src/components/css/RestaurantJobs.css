@@ -90,6 +90,11 @@
   height: 44px;
 }
 
+.restaurant-job select option {
+  background-color: #1f1a09;
+  color: white;
+}
+
 /* ===== INPUT FOCUS ===== */
 input:focus,
 select:focus,
